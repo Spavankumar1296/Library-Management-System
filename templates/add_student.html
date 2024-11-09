@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2 class="heading">Add New Student</h2>
+    <div class="box">
+    <form method="POST">
+        <label>Student Name:</label>
+        <input type="text" name="name" required>
+        
+        <label>Student ID:</label>
+        <input type="text" name="student_id" required>
+        
+        <button type="submit">Add Student</button>
+    </form>
+    <div class="view-books-button-sec"> 
+        
+        <button style="font-size: 20px;">
+            <a href="{{ url_for('view_students') }}">Back</a>
+        </button>
+        
+    </div>
+</div>
+</body>
+</html>

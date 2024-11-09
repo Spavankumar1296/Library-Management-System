@@ -1,0 +1,292 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-image: url("https://img.freepik.com/free-photo/closeup-books-wellorganized-shelves-bookstore_181624-59731.jpg?t=st=1731005323~exp=1731008923~hmac=180b8788ad88e8307add430de0d129d8e51cce0fa77c24e0d9b7f576b599c418&w=996");
+    background-size: cover;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    height: 100vh;
+    margin: 0;
+}
+
+.container{
+    padding-top: 124px;
+     display: flex;
+     flex-direction: column;
+    align-items: center;
+    /* display: grid;
+    place-items: center; */
+}
+
+h1, h2 {
+    color: #FFFFFF; /* Darker shade for headings */
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+a {
+    text-decoration: none;
+    color: #230d14; /* Bright pink link color */
+}
+
+a:hover {
+    color: #13060b; /* Darker pink on hover */
+}
+
+/* Navbar */
+nav {
+    background-color: #0f6489; /* Vibrant blue */
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+    
+}
+
+nav a {
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #1cb0f0; /* Darker blue on hover */
+}
+
+/* Form Styling */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #175292;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #0277bd;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    max-width: 900px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #29b6f6; 
+    color: #fff;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f8e9;
+}
+
+tr:hover {
+    background-color: #e1f5fe;
+    cursor: pointer;
+}
+
+/* Buttons in Tables */
+button {
+    background-color: #29b6f6;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0277bd;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Action Buttons Styling */
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.update-btn, .delete-btn {
+    padding: 5px 10px;
+    margin: 0 5px;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.update-btn {
+    background-color: #66bb6a; /* Bright green for update */
+    color: white;
+}
+
+.update-btn:hover {
+    background-color: #43a047; /* Darker green on hover */
+}
+
+.delete-btn {
+    background-color: #ef5350; /* Bright red for delete */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table, form {
+        width: 100%;
+    }
+
+    h1, h2 {
+        font-size: 24px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #29b6f6;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #0277bd;
+    color: white;
+}
+
+.pagination .active {
+    background-color: #29b6f6;
+    color: white;
+}
+
+.view-books-button-sec
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 220px;
+    
+
+}
+
+
+.box{
+    padding-top: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading{
+    padding-top: 18px;
+    text-align: center;
+    text-decoration: underline #F5F5DC;
+}
+
+.main-heading{
+    font-size: 48px;
+    font-weight: bold;
+    color: #F5F5DC;
+    text-decoration:underline #fff;
+}
+
+.view-books-button-sec{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 24px;
+}

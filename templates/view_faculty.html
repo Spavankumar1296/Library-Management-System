@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Faculty</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2 class="heading">Faculty Detailes</h2>
+    <div class="box">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Faculty ID</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+        {% for faculty in faculty_members %}
+        <tr>
+            <td>{{ faculty[0] }}</td>
+            <td>{{ faculty[1] }}</td>
+            <td>{{ faculty[2] }}</td>
+            <td>{{ faculty[3] }}</td>
+            <td>
+                <form action="{{ url_for('delete_faculty', id=faculty[0]) }}" method="POST" style="display: inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        
+    </table>
+    <div class="view-books-button-sec"> 
+        
+        <button style="font-size: 20px;">
+            <a href="{{ url_for('add_faculty') }}">Add New Faculty Member</a>
+        </button>
+        <button style="font-size: 20px;">
+            <a href="{{ url_for('index') }}">Back</a>
+        </button>
+        
+    </div>
+</div>
+</body>
+</html>

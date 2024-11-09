@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-heading">Welcome to Library </h1>
+        <nav>
+            <a href="{{ url_for('add_book') }}">Add Book</a>
+           
+        </nav>
+        <nav>
+            <a href="{{ url_for('view_books') }}">View Books</a>
+        </nav>
+        <nav>
+            <a href="{{ url_for('view_borrowed_books') }}">View Borrowed Books</a>
+           
+        </nav>
+    
+        <nav>
+            <a href="{{ url_for('view_students') }}">Manage Students</a>
+           
+        </nav>
+        <nav>
+            <a href="{{ url_for('view_faculty') }}">Manage Faculty</a>
+           
+        </nav>
+        <ul>
+            {% for book in books %}
+                <li>
+                    <a href="{{ url_for('update_book', id=book[0]) }}">Update</a>
+                    <a href="{{ url_for('delete_book', id=book[0]) }}">Delete</a>
+                    {{ book[1] }} by {{ book[2] }}
+                </li>
+            {% endfor %}
+        </ul>
+        
+</body>
+</html>

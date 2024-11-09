@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Faculty Member</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2 class="heading">Add New Faculty Member</h2>
+    <div class="box">
+    <form method="POST">
+        <label>Faculty Name:</label>
+        <input type="text" name="name" required>
+        
+        <label>Faculty ID:</label>
+        <input type="text" name="faculty_id" required>
+        
+        <label>Role:</label>
+        <input type="text" name="role" required>
+        
+        <button type="submit">Add Faculty Member</button>
+    </form>
+    <div class="view-books-button-sec"> 
+        
+        
+        <button style="font-size: 20px;">
+            <a href="{{ url_for('view_faculty') }}">Back</a>
+        </button>
+        
+    </div>
+</div>
+</body>
+</html>

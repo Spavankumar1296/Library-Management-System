@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Students</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2 class="heading">Students List</h2>
+    <div class="box">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Student ID</th>
+            <th>Actions</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student[0] }}</td>
+            <td>{{ student[1] }}</td>
+            <td>{{ student[2] }}</td>
+            <td>
+                <form action="{{ url_for('delete_student', id=student[0]) }}" method="POST" style="display: inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="view-books-button-sec"> 
+        <button style="font-size: 20px;">
+            <a href="{{ url_for('add_student') }}">Add New Student</a>
+        </button>
+        <button style="font-size: 20px;">
+            <a href="{{ url_for('index') }}">Back</a>
+        </button>
+        
+    </div>
+</div>
+    
+</body>
+</html>

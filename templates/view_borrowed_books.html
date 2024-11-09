@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Borrowed Books</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2 class="heading">Books Information</h2>
+    <div class="box">
+    <table>
+        <tr>
+            <th>Borrow ID</th>
+            <th>Book Title</th>
+            <th>Student Name</th>
+            <th>Borrow Date</th>
+            <th>Return Date</th>
+            <th>Actions</th>
+        </tr>
+        {% for borrow in borrowed_books %}
+        <tr>
+            <td>{{ borrow[0] }}</td>
+            <td>{{ borrow[1] }}</td>
+            <td>{{ borrow[2] }}</td>
+            <td>{{ borrow[3] }}</td>
+            <td>{{ borrow[4] if borrow[4] else 'Not Returned' }}</td>
+            <td>
+                {% if not borrow[4] %}
+                <form action="{{ url_for('return_book', borrow_id=borrow[0]) }}" method="POST">
+                    <button type="submit">Return Book</button>
+                </form>
+                {% else %}
+                Returned
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="view-books-button-sec"> 
+        <button style="font-size: 20px;">
+            <a href="{{ url_for('index') }}">Back</a>
+        </button>
+        
+    </div>
+</div>
+</body>
+</html>
