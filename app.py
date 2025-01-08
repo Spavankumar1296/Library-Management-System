@@ -9,7 +9,7 @@ app.secret_key = 'your_secret_key'
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Pavan@202147898",
+    password="***************",
     database="pavandb"
 )
 
